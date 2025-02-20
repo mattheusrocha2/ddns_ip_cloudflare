@@ -1,0 +1,12 @@
+services:  
+  ddns:
+    image: ddns:latest
+    container_name: ddns_cloudflare
+    restart: always
+    ports:
+      - "1001:1001"
+    volumes:
+    - ./data:/app/data
+    - ./.env:/ddns_ip_cloudflare/.env
+    env_file:
+      - C:/Users/matth/OneDrive/Documentos/ddns_ip_cloudflare/.env
